@@ -1,0 +1,1083 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- ============================================================
+       META & SEO
+  ============================================================ -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Personal academic webpage of Zaheer Abass, PhD Scholar at IIT Guwahati, specializing in Rock Mechanics, Dynamic Strength and Fragmentation of Geomaterials." />
+  <meta property="og:title" content="Zaheer Abass | PhD Scholar – IIT Guwahati" />
+  <meta property="og:description" content="Academic profile of Zaheer Abass, PhD Researcher at IIT Guwahati, Civil Engineering." />
+  <title>Zaheer Abass | PhD Scholar – IIT Guwahati</title>
+
+  <!-- Google Fonts – Roboto -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Roboto+Slab:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
+
+  <style>
+    /* ===================== CSS RESET & VARIABLES ===================== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --brand:       #003f87;
+      --brand-light: #e8f0fb;
+      --accent:      #e05a1e;
+      --text:        #1a1a2e;
+      --muted:       #5a6272;
+      --border:      #dde3ed;
+      --bg:          #ffffff;
+      --bg-alt:      #f7f9fc;
+      --radius:      8px;
+      --shadow:      0 2px 16px rgba(0,0,0,.08);
+      --transition:  .3s ease;
+      --max-w:       1080px;
+    }
+
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      font-family: 'Roboto', Arial, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.7;
+    }
+
+    /* ===================== UTILITIES ===================== */
+    .container { max-width: var(--max-w); margin: 0 auto; padding: 0 24px; }
+    .section    { padding: 72px 0; }
+    .section--alt { background: var(--bg-alt); }
+
+    h1, h2, h3 { font-family: 'Roboto Slab', serif; }
+
+    h2.section-title {
+      font-size: 1.75rem;
+      color: var(--brand);
+      margin-bottom: 8px;
+      position: relative;
+      display: inline-block;
+    }
+    h2.section-title::after {
+      content: '';
+      display: block;
+      width: 48px;
+      height: 3px;
+      background: var(--accent);
+      margin-top: 6px;
+      border-radius: 2px;
+    }
+    .section-subtitle {
+      color: var(--muted);
+      margin-bottom: 40px;
+      font-size: .95rem;
+    }
+
+    /* ===================== FADE-IN ANIMATION ===================== */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity .6s ease, transform .6s ease;
+    }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+    /* ===================== NAVBAR ===================== */
+    #navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: var(--brand);
+      box-shadow: 0 2px 12px rgba(0,0,0,.18);
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 58px;
+    }
+    .nav-brand {
+      color: #fff;
+      font-family: 'Roboto Slab', serif;
+      font-size: 1.05rem;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .nav-links { display: flex; list-style: none; gap: 4px; }
+    .nav-links a {
+      color: rgba(255,255,255,.85);
+      text-decoration: none;
+      padding: 6px 14px;
+      border-radius: 4px;
+      font-size: .9rem;
+      font-weight: 500;
+      transition: background var(--transition), color var(--transition);
+    }
+    .nav-links a:hover, .nav-links a.active {
+      background: rgba(255,255,255,.18);
+      color: #fff;
+    }
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+    }
+    .nav-toggle span {
+      display: block; width: 24px; height: 2px;
+      background: #fff; border-radius: 2px;
+      transition: var(--transition);
+    }
+    @media (max-width: 700px) {
+      .nav-toggle { display: flex; }
+      .nav-links {
+        display: none; flex-direction: column;
+        position: absolute; top: 58px; left: 0; right: 0;
+        background: var(--brand);
+        padding: 12px 24px 20px; gap: 2px;
+      }
+      .nav-links.open { display: flex; }
+      .nav-links a { padding: 10px 12px; font-size: .95rem; }
+    }
+
+    /* ===================== HERO ===================== */
+    #hero {
+      background: linear-gradient(135deg, var(--brand) 0%, #1a4fa0 60%, #1e3a6e 100%);
+      color: #fff;
+      padding: 72px 0 64px;
+    }
+    .hero-inner {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+    }
+    .hero-photo {
+      flex-shrink: 0;
+      width: 155px; height: 155px;
+      border-radius: 50%;
+      border: 4px solid rgba(255,255,255,.6);
+      overflow: hidden;
+      background: rgba(255,255,255,.12);
+      box-shadow: 0 6px 28px rgba(0,0,0,.35);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .hero-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+    }
+    .hero-info h1 {
+      font-size: 2.4rem; font-weight: 700;
+      line-height: 1.15; margin-bottom: 8px;
+    }
+    .hero-info .title-tag {
+      display: inline-block;
+      background: var(--accent); color: #fff;
+      font-size: .82rem; font-weight: 600;
+      padding: 3px 12px; border-radius: 20px;
+      letter-spacing: .6px; text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    .hero-info .institute {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,.82);
+      margin-bottom: 20px;
+    }
+    .hero-info .institute i { margin-right: 6px; color: var(--accent); }
+    .hero-badges { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 24px; }
+    .badge {
+      display: flex; align-items: center; gap: 6px;
+      background: rgba(255,255,255,.14);
+      border: 1px solid rgba(255,255,255,.25);
+      color: rgba(255,255,255,.9);
+      font-size: .82rem; padding: 5px 13px; border-radius: 20px;
+    }
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 10px 24px; border-radius: 6px;
+      font-size: .9rem; font-weight: 600;
+      cursor: pointer; text-decoration: none;
+      transition: var(--transition); border: none;
+    }
+    .btn-primary { background: var(--accent); color: #fff; }
+    .btn-primary:hover { background: #c7481a; transform: translateY(-1px); box-shadow: 0 4px 14px rgba(224,90,30,.4); }
+    .btn-outline { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,.55); }
+    .btn-outline:hover { background: rgba(255,255,255,.12); border-color: #fff; }
+
+    @media (max-width: 620px) {
+      .hero-inner { flex-direction: column; text-align: center; }
+      .hero-info h1 { font-size: 1.8rem; }
+      .hero-badges { justify-content: center; }
+    }
+
+    /* ===================== ABOUT ===================== */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: 48px; align-items: start;
+    }
+    .about-text p { color: var(--muted); margin-bottom: 16px; }
+    .about-text p:last-child { margin-bottom: 0; }
+    .info-card {
+      background: var(--brand-light);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+    }
+    .info-card h3 { font-size: 1rem; color: var(--brand); margin-bottom: 14px; font-weight: 600; }
+    .info-row {
+      display: flex; align-items: flex-start; gap: 10px;
+      padding: 8px 0; border-bottom: 1px solid var(--border); font-size: .9rem;
+    }
+    .info-row:last-child { border-bottom: none; }
+    .info-row i { color: var(--brand); margin-top: 3px; width: 16px; flex-shrink: 0; }
+    .info-row span { color: var(--muted); }
+    .info-row strong { display: block; color: var(--text); font-weight: 500; }
+    @media (max-width: 800px) { .about-grid { grid-template-columns: 1fr; } }
+
+    /* ===================== RESEARCH INTERESTS ===================== */
+    .interests-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 18px;
+    }
+    .interest-card {
+      background: var(--bg); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 20px 18px;
+      display: flex; align-items: flex-start; gap: 14px;
+      box-shadow: var(--shadow);
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+    .interest-card:hover { transform: translateY(-3px); box-shadow: 0 6px 24px rgba(0,0,0,.12); }
+    .interest-icon {
+      width: 42px; height: 42px; border-radius: 8px;
+      background: var(--brand-light);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; font-size: 1.1rem; color: var(--brand);
+    }
+    .interest-card h4 { font-size: .95rem; font-weight: 600; color: var(--text); margin-bottom: 4px; }
+    .interest-card p  { font-size: .82rem; color: var(--muted); }
+
+    /* ===================== EDUCATION / TIMELINE ===================== */
+    .timeline { position: relative; padding-left: 32px; }
+    .timeline::before {
+      content: ''; position: absolute;
+      left: 8px; top: 0; bottom: 0;
+      width: 2px; background: var(--border);
+    }
+    .tl-item { position: relative; margin-bottom: 36px; }
+    .tl-item:last-child { margin-bottom: 0; }
+    .tl-dot {
+      position: absolute; left: -28px; top: 4px;
+      width: 16px; height: 16px; border-radius: 50%;
+      background: var(--brand); border: 3px solid #fff;
+      box-shadow: 0 0 0 2px var(--brand);
+    }
+    .tl-year {
+      display: inline-block; background: var(--brand); color: #fff;
+      font-size: .75rem; font-weight: 600;
+      padding: 2px 10px; border-radius: 12px;
+      margin-bottom: 6px; letter-spacing: .4px;
+    }
+    .tl-card {
+      background: var(--bg); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 18px 20px; box-shadow: var(--shadow);
+    }
+    .tl-card h3 { font-size: 1rem; font-weight: 600; color: var(--text); margin-bottom: 4px; }
+    .tl-card .inst { color: var(--brand); font-size: .9rem; font-weight: 500; }
+    .tl-card .grade { color: var(--muted); font-size: .85rem; margin-top: 4px; }
+
+    /* ===================== PUBLICATIONS ===================== */
+    .pub-list { display: flex; flex-direction: column; gap: 20px; }
+    .pub-card {
+      background: var(--bg); border: 1px solid var(--border);
+      border-left: 4px solid var(--brand);
+      border-radius: var(--radius); padding: 20px 22px; box-shadow: var(--shadow);
+      transition: border-color var(--transition), transform var(--transition);
+    }
+    .pub-card:hover { border-left-color: var(--accent); transform: translateX(3px); }
+    .pub-meta { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 8px; }
+    .pub-tag {
+      font-size: .72rem; font-weight: 600;
+      padding: 2px 10px; border-radius: 12px;
+      text-transform: uppercase; letter-spacing: .4px;
+    }
+    .pub-tag.chapter  { background: #e8f5e9; color: #1b5e20; }
+    .pub-tag.conf     { background: #fff3e0; color: #b84f00; }
+    .pub-tag.year     { background: #f0f0f0; color: #555; }
+    .pub-card h3 { font-size: .98rem; font-weight: 600; color: var(--text); margin-bottom: 6px; line-height: 1.4; }
+    .pub-card .authors { font-size: .85rem; color: var(--muted); margin-bottom: 4px; }
+    .pub-card .authors strong { color: var(--text); }
+    .pub-card .venue { font-size: .85rem; color: var(--brand); font-style: italic; }
+    .pub-card .pub-links { margin-top: 10px; display: flex; gap: 10px; }
+    .pub-link {
+      font-size: .8rem; font-weight: 600; color: var(--brand);
+      text-decoration: none; display: inline-flex; align-items: center; gap: 4px;
+      padding: 3px 10px; border: 1px solid var(--border); border-radius: 4px;
+      transition: var(--transition);
+    }
+    .pub-link:hover { background: var(--brand); color: #fff; border-color: var(--brand); }
+
+    /* ===================== PROJECTS ===================== */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 22px;
+    }
+    .proj-card {
+      background: var(--bg); border: 1px solid var(--border);
+      border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow);
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+    .proj-card:hover { transform: translateY(-4px); box-shadow: 0 8px 28px rgba(0,0,0,.13); }
+    .proj-header {
+      background: linear-gradient(135deg, var(--brand) 0%, #1a4fa0 100%);
+      padding: 18px 20px; display: flex; align-items: center; gap: 12px;
+    }
+    .proj-header i { font-size: 1.4rem; color: rgba(255,255,255,.85); }
+    .proj-header h3 { font-size: .98rem; font-weight: 600; color: #fff; }
+    .proj-body { padding: 18px 20px; }
+    .proj-body p { font-size: .88rem; color: var(--muted); margin-bottom: 12px; }
+    .proj-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+    .proj-tag {
+      font-size: .75rem; background: var(--brand-light);
+      color: var(--brand); padding: 3px 10px; border-radius: 12px; font-weight: 500;
+    }
+    .proj-status {
+      display: inline-flex; align-items: center; gap: 5px;
+      font-size: .75rem; font-weight: 600; padding: 3px 10px;
+      border-radius: 12px; margin-bottom: 10px;
+    }
+    .proj-status.ongoing { background: #e6f9ef; color: #1a7a42; }
+    .proj-status.ongoing::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: #1a7a42; }
+    .proj-status.completed { background: #f0f0f0; color: #555; }
+    .proj-status.completed::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: #aaa; }
+
+    /* ===================== SKILLS ===================== */
+    .skills-wrap { display: flex; flex-wrap: wrap; gap: 10px; }
+    .skill-chip {
+      display: flex; align-items: center; gap: 7px;
+      background: var(--bg); border: 1px solid var(--border);
+      border-radius: 6px; padding: 7px 14px;
+      font-size: .85rem; font-weight: 500; color: var(--text); box-shadow: var(--shadow);
+    }
+    .skill-chip i { color: var(--brand); font-size: .9rem; }
+
+    /* ===================== CONTACT ===================== */
+    .contact-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 40px; align-items: start;
+    }
+    .contact-item {
+      display: flex; align-items: flex-start; gap: 16px; margin-bottom: 24px;
+    }
+    .contact-icon {
+      width: 44px; height: 44px; border-radius: 10px;
+      background: var(--brand-light);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--brand); font-size: 1.1rem; flex-shrink: 0;
+    }
+    .contact-item h4 { font-size: .85rem; color: var(--muted); margin-bottom: 2px; font-weight: 500; }
+    .contact-item a, .contact-item p {
+      font-size: .95rem; color: var(--text); text-decoration: none; font-weight: 500;
+    }
+    .contact-item a:hover { color: var(--brand); }
+    .social-links { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 8px; }
+    .social-btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 9px 18px; border-radius: 6px;
+      font-size: .85rem; font-weight: 600; text-decoration: none;
+      transition: var(--transition); border: 1px solid var(--border);
+      color: var(--text); background: var(--bg);
+    }
+    .social-btn:hover { background: var(--brand); color: #fff; border-color: var(--brand); transform: translateY(-2px); }
+    .social-btn i { font-size: 1rem; }
+    .contact-map {
+      background: var(--bg-alt); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 24px;
+    }
+    .contact-map h3 { font-size: 1rem; font-weight: 600; color: var(--brand); margin-bottom: 16px; }
+    .map-info p { font-size: .9rem; color: var(--muted); margin-bottom: 10px; display: flex; align-items: flex-start; gap: 8px; }
+    .map-info p i { color: var(--brand); margin-top: 3px; }
+    @media (max-width: 760px) { .contact-grid { grid-template-columns: 1fr; } }
+
+    /* ===================== FOOTER ===================== */
+    footer {
+      background: var(--brand); color: rgba(255,255,255,.7);
+      text-align: center; padding: 28px 24px; font-size: .85rem;
+    }
+    footer a { color: rgba(255,255,255,.85); text-decoration: none; }
+    footer a:hover { color: #fff; }
+    footer strong { color: #fff; }
+
+    /* ===================== SCROLL TO TOP ===================== */
+    #scrollTop {
+      position: fixed; bottom: 28px; right: 28px;
+      width: 42px; height: 42px;
+      background: var(--brand); color: #fff;
+      border: none; border-radius: 50%; font-size: 1rem;
+      cursor: pointer; box-shadow: 0 4px 14px rgba(0,0,0,.22);
+      display: none; align-items: center; justify-content: center;
+      transition: background var(--transition), transform var(--transition); z-index: 999;
+    }
+    #scrollTop.show { display: flex; }
+    #scrollTop:hover { background: var(--accent); transform: translateY(-2px); }
+
+    @media (max-width: 500px) {
+      .section { padding: 52px 0; }
+      h2.section-title { font-size: 1.45rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ============================================================
+     NAVIGATION BAR
+============================================================ -->
+<nav id="navbar" role="navigation" aria-label="Main navigation">
+  <div class="container nav-inner">
+    <a href="#hero" class="nav-brand">Zaheer Abass</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about"        class="nav-link">About</a></li>
+      <li><a href="#research"     class="nav-link">Research</a></li>
+      <li><a href="#education"    class="nav-link">Education</a></li>
+      <li><a href="#publications" class="nav-link">Publications</a></li>
+      <li><a href="#projects"     class="nav-link">Projects</a></li>
+      <li><a href="#contact"      class="nav-link">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ============================================================
+     HERO / HEADER
+============================================================ -->
+<header id="hero">
+  <div class="container">
+    <div class="hero-inner fade-in">
+
+      <!-- Profile Photo -->
+      <div class="hero-photo" aria-label="Profile photo of Zaheer Abass">
+        <img src="profile.jpeg" alt="Zaheer Abass – PhD Scholar, IIT Guwahati" />
+      </div>
+
+      <!-- Info -->
+      <div class="hero-info">
+        <span class="title-tag">PhD Scholar / Research Scholar</span>
+        <h1>Zaheer Abass</h1>
+        <p class="institute">
+          <i class="fas fa-university" aria-hidden="true"></i>
+          Department of Civil Engineering, Indian Institute of Technology Guwahati
+        </p>
+
+        <div class="hero-badges">
+          <span class="badge"><i class="fas fa-mountain" aria-hidden="true"></i> Rock Mechanics</span>
+          <span class="badge"><i class="fas fa-bolt"     aria-hidden="true"></i> Dynamic Strength</span>
+          <span class="badge"><i class="fas fa-puzzle-piece" aria-hidden="true"></i> Fragmentation</span>
+          <span class="badge"><i class="fas fa-layer-group"  aria-hidden="true"></i> Geomechanics</span>
+        </div>
+
+        <div style="display:flex; gap:12px; flex-wrap:wrap;">
+          <a href="#contact" class="btn btn-primary">
+            <i class="fas fa-envelope" aria-hidden="true"></i> Get in Touch
+          </a>
+          <a href="cv_zaheer_abass.pdf" class="btn btn-outline" download>
+            <i class="fas fa-download" aria-hidden="true"></i> Download CV
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</header>
+
+<!-- ============================================================
+     ABOUT
+============================================================ -->
+<section id="about" class="section">
+  <div class="container">
+    <h2 class="section-title fade-in">About Me</h2>
+    <p class="section-subtitle fade-in">Academic background &amp; overview</p>
+
+    <div class="about-grid">
+
+      <!-- Bio -->
+      <div class="about-text fade-in">
+        <p>
+          I am a PhD Scholar in the Department of Civil Engineering at the
+          <strong>Indian Institute of Technology Guwahati (IIT Guwahati)</strong>, working under the
+          supervision of <strong>Dr. Vivek Padmanabha</strong>. My doctoral research is focused on
+          the dynamic strength and fragmentation analysis of geomaterials, with a particular emphasis
+          on rock mechanics and geomechanics.
+        </p>
+        <p>
+          My research aims to characterise the mechanical response of rocks and geo-materials under
+          dynamic loading conditions, investigate fragmentation behaviour, and develop insights
+          applicable to underground excavation, slope stability, and earthquake-induced failures in
+          challenging geological terrains.
+        </p>
+        <p>
+          Prior to joining IIT Guwahati, I completed my <strong>M.Tech. in Geotechnical Engineering</strong>
+          from the National Institute of Technology Silchar (NIT Silchar) with a CGPA of 8.9/10.
+          My published work includes studies on rock slope stability and seismic vulnerability
+          assessment along the NH-1 Highway in Ladakh.
+        </p>
+        <p>
+          I am passionate about combining experimental investigations with numerical modelling tools
+          to solve complex geotechnical and geo-mechanical problems, especially in the context of
+          mountainous and seismically active regions of India.
+        </p>
+        <div style="margin-top:20px;">
+          <a href="#publications" class="btn btn-primary" style="font-size:.88rem; padding:9px 20px;">
+            <i class="fas fa-book-open" aria-hidden="true"></i> View Publications
+          </a>
+        </div>
+      </div>
+
+      <!-- Quick Info Card -->
+      <div class="info-card fade-in">
+        <h3><i class="fas fa-id-card" style="margin-right:6px;"></i>Quick Info</h3>
+
+        <div class="info-row">
+          <i class="fas fa-graduation-cap" aria-hidden="true"></i>
+          <div>
+            <strong>Programme</strong>
+            <span>PhD – Civil Engineering</span>
+          </div>
+        </div>
+        <div class="info-row">
+          <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+          <div>
+            <strong>Enrolled Since</strong>
+            <span>July 2023</span>
+          </div>
+        </div>
+        <div class="info-row">
+          <i class="fas fa-user-tie" aria-hidden="true"></i>
+          <div>
+            <strong>Supervisor</strong>
+            <span>Dr. Vivek Padmanabha</span>
+          </div>
+        </div>
+        <div class="info-row">
+          <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+          <div>
+            <strong>Location</strong>
+            <span>Guwahati, Assam, India</span>
+          </div>
+        </div>
+        <div class="info-row">
+          <i class="fas fa-flask" aria-hidden="true"></i>
+          <div>
+            <strong>Specialisation</strong>
+            <span>Geotechnical Engineering</span>
+          </div>
+        </div>
+        <div class="info-row">
+          <i class="fas fa-envelope" aria-hidden="true"></i>
+          <div>
+            <strong>Institute Email</strong>
+            <span><a href="mailto:a.zaheer@iitg.ac.in" style="color:var(--brand);">a.zaheer@iitg.ac.in</a></span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     RESEARCH INTERESTS
+============================================================ -->
+<section id="research" class="section section--alt">
+  <div class="container">
+    <h2 class="section-title fade-in">Research Interests</h2>
+    <p class="section-subtitle fade-in">Core areas of academic focus</p>
+
+    <div class="interests-grid">
+
+      <div class="interest-card fade-in">
+        <div class="interest-icon"><i class="fas fa-hammer" aria-hidden="true"></i></div>
+        <div>
+          <h4>Rock Mechanics</h4>
+          <p>Mechanical behaviour of rocks under static and dynamic loading; failure criteria and constitutive modelling.</p>
+        </div>
+      </div>
+
+      <div class="interest-card fade-in">
+        <div class="interest-icon"><i class="fas fa-bolt" aria-hidden="true"></i></div>
+        <div>
+          <h4>Dynamic Strength of Geomaterials</h4>
+          <p>High strain-rate response of rocks and geo-materials; rate-dependent failure mechanisms.</p>
+        </div>
+      </div>
+
+      <div class="interest-card fade-in">
+        <div class="interest-icon"><i class="fas fa-puzzle-piece" aria-hidden="true"></i></div>
+        <div>
+          <h4>Fragmentation Analysis</h4>
+          <p>Size distribution and energy dissipation during dynamic fragmentation of rock specimens.</p>
+        </div>
+      </div>
+
+      <div class="interest-card fade-in">
+        <div class="interest-icon"><i class="fas fa-layer-group" aria-hidden="true"></i></div>
+        <div>
+          <h4>Geomechanics</h4>
+          <p>Stress-deformation behaviour of geo-materials; underground excavation and tunnel stability.</p>
+        </div>
+      </div>
+
+      <div class="interest-card fade-in">
+        <div class="interest-icon"><i class="fas fa-mountain" aria-hidden="true"></i></div>
+        <div>
+          <h4>Rock Slope Stability</h4>
+          <p>Kinematic and limit-equilibrium analysis of rock slopes; seismically triggered failures in mountainous terrain.</p>
+        </div>
+      </div>
+
+      <div class="interest-card fade-in">
+        <div class="interest-icon"><i class="fas fa-wave-square" aria-hidden="true"></i></div>
+        <div>
+          <h4>Seismic Vulnerability Assessment</h4>
+          <p>Rock mass classification and seismic slope stability analysis along highway corridors.</p>
+        </div>
+      </div>
+
+      <div class="interest-card fade-in">
+        <div class="interest-icon"><i class="fas fa-cube" aria-hidden="true"></i></div>
+        <div>
+          <h4>Numerical Modelling</h4>
+          <p>FEM/FDM simulation of geotechnical problems using RS2, RS3, Plaxis, and Abaqus.</p>
+        </div>
+      </div>
+
+      <div class="interest-card fade-in">
+        <div class="interest-icon"><i class="fas fa-map-marked-alt" aria-hidden="true"></i></div>
+        <div>
+          <h4>Highway Geotechnics</h4>
+          <p>Geotechnical investigations and hazard assessment for infrastructure in high-altitude and seismic zones.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     EDUCATION
+============================================================ -->
+<section id="education" class="section">
+  <div class="container">
+    <h2 class="section-title fade-in">Education</h2>
+    <p class="section-subtitle fade-in">Academic qualifications and training</p>
+
+    <div class="timeline fade-in">
+
+      <!-- PhD -->
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <span class="tl-year">2023 – Present</span>
+        <div class="tl-card">
+          <h3>Doctor of Philosophy (PhD)</h3>
+          <div class="inst">
+            <i class="fas fa-university" style="margin-right:5px;"></i>
+            Indian Institute of Technology Guwahati (IIT Guwahati), Assam
+          </div>
+          <p class="grade">Department of Civil Engineering &nbsp;|&nbsp; Specialisation: Geotechnical Engineering</p>
+          <p class="grade">Supervisor: Dr. Vivek Padmanabha</p>
+          <p class="grade" style="margin-top:6px; color:#1a7a42;">
+            <i class="fas fa-circle" style="font-size:.5rem; margin-right:4px;"></i> Ongoing
+          </p>
+        </div>
+      </div>
+
+      <!-- M.Tech -->
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <span class="tl-year">2021 – 2023</span>
+        <div class="tl-card">
+          <h3>Master of Technology (M.Tech.)</h3>
+          <div class="inst">
+            <i class="fas fa-university" style="margin-right:5px;"></i>
+            National Institute of Technology Silchar (NIT Silchar), Assam
+          </div>
+          <p class="grade">Specialisation: Geotechnical Engineering</p>
+          <p class="grade">CGPA: 8.9 / 10</p>
+        </div>
+      </div>
+
+      <!-- B.Tech -->
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <span class="tl-year">2017 – 2021</span>
+        <div class="tl-card">
+          <h3>Bachelor of Technology (B.Tech.)</h3>
+          <div class="inst">
+            <i class="fas fa-university" style="margin-right:5px;"></i>
+            MDU Rohtak, Delhi NCR
+          </div>
+          <p class="grade">Civil Engineering</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     PUBLICATIONS
+============================================================ -->
+<section id="publications" class="section section--alt">
+  <div class="container">
+    <h2 class="section-title fade-in">Publications</h2>
+    <p class="section-subtitle fade-in">Peer-reviewed book chapters and conference proceedings</p>
+
+    <div class="pub-list">
+
+      <!-- Publication 1 -->
+      <div class="pub-card fade-in">
+        <div class="pub-meta">
+          <span class="pub-tag chapter">Book Chapter</span>
+          <span class="pub-tag year">2024</span>
+        </div>
+        <h3>Rock Slope Stability Analysis Along NH 1 in Ladakh</h3>
+        <p class="authors">
+          <strong>Abass, Z.</strong>, Dey, A. K., &amp; Hussain, G.
+        </p>
+        <p class="venue">
+          In Indian Young Geotechnical Engineers Conference (pp. 131–142). Lecture Notes in Civil Engineering (LNCE).
+          Springer Nature Singapore, 2024.
+        </p>
+        <div class="pub-links">
+          <a href="https://link.springer.com/chapter/10.1007/978-981-99-6998-2_13" target="_blank" rel="noopener noreferrer" class="pub-link">
+            <i class="fas fa-external-link-alt"></i> Publisher Link
+          </a>
+        </div>
+      </div>
+
+      <!-- Publication 2 -->
+      <div class="pub-card fade-in">
+        <div class="pub-meta">
+          <span class="pub-tag chapter">Book Chapter</span>
+          <span class="pub-tag year">2025</span>
+        </div>
+        <h3>Seismic Vulnerability Assessment of Slopes Along NH-1 Highway in Ladakh: A Comprehensive Study Using Rock Mass Classification and Seismic Slope Stability Analysis</h3>
+        <p class="authors">
+          <strong>Abass, Z.</strong>, Padmanabha, V., Dey, A. K., &amp; Hussain, G.
+        </p>
+        <p class="venue">
+          In International Conference on Recent Advances in Geotechnical Earthquake Engineering and Soil Dynamics
+          (pp. 267–278). Lecture Notes in Civil Engineering (LNCE). Springer Nature Singapore, 2025.
+        </p>
+        <div class="pub-links">
+          <a href="https://link.springer.com" target="_blank" rel="noopener noreferrer" class="pub-link">
+            <i class="fas fa-external-link-alt"></i> Publisher Link
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     PROJECTS
+============================================================ -->
+<section id="projects" class="section">
+  <div class="container">
+    <h2 class="section-title fade-in">Projects &amp; Research Work</h2>
+    <p class="section-subtitle fade-in">Ongoing doctoral research and major academic work</p>
+
+    <div class="projects-grid">
+
+      <div class="proj-card fade-in">
+        <div class="proj-header">
+          <i class="fas fa-bolt" aria-hidden="true"></i>
+          <h3>Dynamic Strength &amp; Fragmentation of Geomaterials</h3>
+        </div>
+        <div class="proj-body">
+          <span class="proj-status ongoing">Ongoing – PhD Research</span>
+          <p>
+            Doctoral research focused on characterising the dynamic mechanical behaviour and
+            fragmentation patterns of rocks and geo-materials under high strain-rate loading.
+            Investigating energy dissipation, crack propagation, and size distribution of
+            fragments to develop predictive models for excavation and blasting applications.
+          </p>
+          <div class="proj-tags">
+            <span class="proj-tag">Rock Mechanics</span>
+            <span class="proj-tag">Dynamic Loading</span>
+            <span class="proj-tag">Fragmentation</span>
+            <span class="proj-tag">Geomechanics</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-card fade-in">
+        <div class="proj-header">
+          <i class="fas fa-mountain" aria-hidden="true"></i>
+          <h3>Rock Slope Stability – NH-1 Ladakh</h3>
+        </div>
+        <div class="proj-body">
+          <span class="proj-status completed">Completed</span>
+          <p>
+            Comprehensive stability analysis of rock slopes along National Highway 1 in Ladakh
+            using kinematic analysis, rock mass classification (SMR, RMR, Q-system), and
+            limit-equilibrium methods. Results published as a book chapter in LNCE (2024).
+          </p>
+          <div class="proj-tags">
+            <span class="proj-tag">Slope Stability</span>
+            <span class="proj-tag">NH-1 Ladakh</span>
+            <span class="proj-tag">RMR / SMR</span>
+            <span class="proj-tag">Kinematic Analysis</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-card fade-in">
+        <div class="proj-header">
+          <i class="fas fa-wave-square" aria-hidden="true"></i>
+          <h3>Seismic Vulnerability of Highway Slopes</h3>
+        </div>
+        <div class="proj-body">
+          <span class="proj-status completed">Completed</span>
+          <p>
+            Seismic slope stability assessment along NH-1, Ladakh, combining rock mass
+            classification systems with pseudo-static and dynamic seismic analysis. Identified
+            critical failure zones and proposed mitigation strategies. Published in LNCE (2025).
+          </p>
+          <div class="proj-tags">
+            <span class="proj-tag">Seismic Analysis</span>
+            <span class="proj-tag">Rock Mass Classification</span>
+            <span class="proj-tag">NH-1 Ladakh</span>
+            <span class="proj-tag">Hazard Assessment</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-card fade-in">
+        <div class="proj-header">
+          <i class="fas fa-cube" aria-hidden="true"></i>
+          <h3>Numerical Modelling of Geotechnical Problems</h3>
+        </div>
+        <div class="proj-body">
+          <span class="proj-status ongoing">Ongoing</span>
+          <p>
+            Finite element and finite difference simulations of geotechnical boundary value
+            problems including slope stability, underground openings, and dynamic loading
+            scenarios using RS2, RS3 (Rocscience), Plaxis, and Abaqus software platforms.
+          </p>
+          <div class="proj-tags">
+            <span class="proj-tag">RS2 / RS3</span>
+            <span class="proj-tag">Plaxis</span>
+            <span class="proj-tag">Abaqus</span>
+            <span class="proj-tag">FEM</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Tools & Software -->
+    <div style="margin-top: 52px;" class="fade-in">
+      <h3 style="font-size:1.1rem; color:var(--brand); margin-bottom:18px; font-family:'Roboto Slab',serif;">
+        <i class="fas fa-wrench" style="margin-right:8px;"></i>Tools &amp; Software
+      </h3>
+      <div class="skills-wrap">
+        <span class="skill-chip"><i class="fas fa-layer-group"></i> RS2 (Rocscience)</span>
+        <span class="skill-chip"><i class="fas fa-cube"></i> RS3 (Rocscience)</span>
+        <span class="skill-chip"><i class="fas fa-drafting-compass"></i> Plaxis</span>
+        <span class="skill-chip"><i class="fas fa-cogs"></i> Abaqus</span>
+        <span class="skill-chip"><i class="fas fa-chart-bar"></i> Origin Pro</span>
+        <span class="skill-chip"><i class="fas fa-map"></i> ArcGIS</span>
+        <span class="skill-chip"><i class="fab fa-python"></i> Python</span>
+        <span class="skill-chip"><i class="fas fa-file-alt"></i> LaTeX</span>
+        <span class="skill-chip"><i class="fas fa-mountain"></i> Dips (Rocscience)</span>
+        <span class="skill-chip"><i class="fas fa-tools"></i> Slide (Rocscience)</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     CONTACT
+============================================================ -->
+<section id="contact" class="section section--alt">
+  <div class="container">
+    <h2 class="section-title fade-in">Contact</h2>
+    <p class="section-subtitle fade-in">Reach out for collaborations, queries, or academic discussions</p>
+
+    <div class="contact-grid">
+
+      <!-- Left: Contact Details -->
+      <div class="fade-in">
+
+        <div class="contact-item">
+          <div class="contact-icon"><i class="fas fa-envelope" aria-hidden="true"></i></div>
+          <div>
+            <h4>Institute Email</h4>
+            <a href="mailto:a.zaheer@iitg.ac.in">a.zaheer@iitg.ac.in</a><br>
+            <a href="mailto:zaheerabass0207@gmail.com" style="font-size:.85rem; color:var(--muted);">zaheerabass0207@gmail.com</a>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-icon"><i class="fas fa-map-marker-alt" aria-hidden="true"></i></div>
+          <div>
+            <h4>Office Address</h4>
+            <p>RS2 Annexure Building<br>
+               Civil Engineering Department<br>
+               IIT Guwahati, Guwahati – 781039<br>
+               Assam, India</p>
+          </div>
+        </div>
+
+        <!-- Social / Academic Profile Links -->
+        <div style="margin-top: 8px;">
+          <h4 style="font-size:.85rem; color:var(--muted); margin-bottom:12px; font-weight:500;">Academic Profiles</h4>
+          <div class="social-links">
+            <a href="https://www.linkedin.com/in/zaheer-abass-86220a1a4/" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="LinkedIn Profile">
+              <i class="fab fa-linkedin" style="color:#0077b5;"></i> LinkedIn
+            </a>
+            <a href="https://scholar.google.com/citations?hl=en&view_op=list_works&gmla=AEk_c1tuffNvSRVaqcyqD5Wnt_k6eaGODZdZmPHe_QXTNOUqkLzzPjmNIwx8nUVjgOsM74gtsezxC3QL-d75jg&user=Ipn-wr8AAAAJ" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Google Scholar Profile">
+              <i class="fas fa-graduation-cap" style="color:#4285f4;"></i> Google Scholar
+            </a>
+            <a href="mailto:a.zaheer@iitg.ac.in" class="social-btn" aria-label="Send Email">
+              <i class="fas fa-envelope" style="color:var(--accent);"></i> Email Me
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Location Card -->
+      <div class="contact-map fade-in">
+        <h3><i class="fas fa-map-pin" style="margin-right:8px; color:var(--accent);"></i>IIT Guwahati Campus</h3>
+
+        <div style="border-radius:8px; overflow:hidden; margin-bottom:18px; border:1px solid var(--border);">
+          <iframe
+            title="IIT Guwahati Location"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3581.3944120065!2d91.6989!3d26.1924!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x375a5943e3de3b3b%3A0x7e3ac7e67e12dcc9!2sIIT%20Guwahati!5e0!3m2!1sen!2sin!4v1690000000000"
+            width="100%" height="200"
+            style="border:0; display:block;"
+            allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+
+        <div class="map-info">
+          <p><i class="fas fa-university" aria-hidden="true"></i>
+            Indian Institute of Technology Guwahati
+          </p>
+          <p><i class="fas fa-map" aria-hidden="true"></i>
+            North Guwahati, Assam – 781039, India
+          </p>
+          <p><i class="fas fa-globe" aria-hidden="true"></i>
+            <a href="https://www.iitg.ac.in" target="_blank" rel="noopener noreferrer">www.iitg.ac.in</a>
+          </p>
+          <p><i class="fas fa-building" aria-hidden="true"></i>
+            Dept. of Civil Engineering
+          </p>
+        </div>
+
+        <div style="margin-top:16px; padding-top:16px; border-top:1px solid var(--border);">
+          <p style="font-size:.82rem; color:var(--muted); margin-bottom:10px;">
+            <i class="fas fa-clock" style="margin-right:4px;"></i>
+            Office hours: Mon–Fri, 10:00 AM – 5:00 PM IST
+          </p>
+          <a href="mailto:a.zaheer@iitg.ac.in" class="btn btn-primary" style="font-size:.85rem; padding:9px 20px; width:100%; justify-content:center;">
+            <i class="fas fa-paper-plane" aria-hidden="true"></i> Send an Email
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FOOTER
+============================================================ -->
+<footer>
+  <p>
+    &copy; 2024 <strong>Zaheer Abass</strong> &nbsp;|&nbsp;
+    PhD Scholar, Dept. of Civil Engineering, IIT Guwahati &nbsp;|&nbsp;
+    Designed for academic research
+  </p>
+  <p style="margin-top:8px;">
+    <a href="mailto:a.zaheer@iitg.ac.in">a.zaheer@iitg.ac.in</a>
+    &nbsp;|&nbsp;
+    <a href="https://www.iitg.ac.in" target="_blank" rel="noopener noreferrer">IIT Guwahati</a>
+  </p>
+</footer>
+
+<!-- Scroll-to-Top -->
+<button id="scrollTop" aria-label="Scroll to top" title="Back to top">
+  <i class="fas fa-chevron-up" aria-hidden="true"></i>
+</button>
+
+<!-- ============================================================
+     JAVASCRIPT
+============================================================ -->
+<script>
+  /* --- Mobile Navigation Toggle --- */
+  const navToggle = document.getElementById('navToggle');
+  const navLinks  = document.getElementById('navLinks');
+  navToggle.addEventListener('click', () => {
+    const isOpen = navLinks.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', isOpen);
+  });
+  document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      navToggle.setAttribute('aria-expanded', false);
+    });
+  });
+
+  /* --- Active Nav Link on Scroll --- */
+  const sections   = document.querySelectorAll('section[id], header[id]');
+  const navItems   = document.querySelectorAll('.nav-link');
+  const sectionObs = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        navItems.forEach(link => {
+          link.classList.toggle('active', link.getAttribute('href') === '#' + entry.target.id);
+        });
+      }
+    });
+  }, { rootMargin: '-40% 0px -55% 0px' });
+  sections.forEach(sec => sectionObs.observe(sec));
+
+  /* --- Fade-in Animation --- */
+  const fadeEls  = document.querySelectorAll('.fade-in');
+  const fadeObs  = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        fadeObs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  fadeEls.forEach(el => fadeObs.observe(el));
+
+  /* --- Scroll-to-Top Button --- */
+  const scrollTopBtn = document.getElementById('scrollTop');
+  window.addEventListener('scroll', () => {
+    scrollTopBtn.classList.toggle('show', window.scrollY > 400);
+  });
+  scrollTopBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  /* --- Staggered Fade Delay for Grid Items --- */
+  document.querySelectorAll('.interests-grid .fade-in, .projects-grid .fade-in').forEach((el, i) => {
+    el.style.transitionDelay = `${(i % 4) * 0.1}s`;
+  });
+</script>
+
+</body>
+</html>
