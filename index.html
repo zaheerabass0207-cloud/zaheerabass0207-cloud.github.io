@@ -155,19 +155,22 @@
     }
     .hero-photo {
       flex-shrink: 0;
-      width: 155px; height: 155px;
+      width: 180px;
+      height: 180px;
       border-radius: 50%;
       border: 4px solid rgba(255,255,255,.6);
       overflow: hidden;
       background: rgba(255,255,255,.12);
       box-shadow: 0 6px 28px rgba(0,0,0,.35);
-      display: flex; align-items: center; justify-content: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
     .hero-photo img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: center top;
+      object-position: center center;
     }
     .hero-info h1 {
       font-size: 2.4rem; font-weight: 700;
@@ -211,6 +214,7 @@
       .hero-inner { flex-direction: column; text-align: center; }
       .hero-info h1 { font-size: 1.8rem; }
       .hero-badges { justify-content: center; }
+      .hero-photo { width: 150px; height: 150px; }
     }
 
     /* ===================== ABOUT ===================== */
@@ -312,7 +316,7 @@
     .pub-card .authors { font-size: .85rem; color: var(--muted); margin-bottom: 4px; }
     .pub-card .authors strong { color: var(--text); }
     .pub-card .venue { font-size: .85rem; color: var(--brand); font-style: italic; }
-    .pub-card .pub-links { margin-top: 10px; display: flex; gap: 10px; }
+    .pub-card .pub-links { margin-top: 10px; display: flex; gap: 10px; flex-wrap: wrap; }
     .pub-link {
       font-size: .8rem; font-weight: 600; color: var(--brand);
       text-decoration: none; display: inline-flex; align-items: center; gap: 4px;
@@ -430,6 +434,19 @@
       .section { padding: 52px 0; }
       h2.section-title { font-size: 1.45rem; }
     }
+    
+    /* Style for supervisor link */
+    .supervisor-link {
+      color: var(--brand);
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px dotted var(--brand);
+      transition: all var(--transition);
+    }
+    .supervisor-link:hover {
+      color: var(--accent);
+      border-bottom-color: var(--accent);
+    }
   </style>
 </head>
 <body>
@@ -511,9 +528,9 @@
         <p>
           I am a PhD Scholar in the Department of Civil Engineering at the
           <strong>Indian Institute of Technology Guwahati (IIT Guwahati)</strong>, working under the
-          supervision of <strong>Dr. Vivek Padmanabha</strong>. My doctoral research is focused on
-          the dynamic strength and fragmentation analysis of geomaterials, with a particular emphasis
-          on rock mechanics and geomechanics.
+          supervision of <strong><a href="https://viveins.github.io/" target="_blank" rel="noopener noreferrer" class="supervisor-link">Dr. Vivek Padmanabha <i class="fas fa-external-link-alt" style="font-size: 0.7rem;"></i></a></strong>.
+          My doctoral research is focused on the dynamic strength and fragmentation analysis of geomaterials,
+          with a particular emphasis on rock mechanics and geomechanics.
         </p>
         <p>
           My research aims to characterise the mechanical response of rocks and geo-materials under
@@ -561,7 +578,7 @@
           <i class="fas fa-user-tie" aria-hidden="true"></i>
           <div>
             <strong>Supervisor</strong>
-            <span>Dr. Vivek Padmanabha</span>
+            <span><a href="https://viveins.github.io/" target="_blank" rel="noopener noreferrer" class="supervisor-link">Dr. Vivek Padmanabha <i class="fas fa-external-link-alt" style="font-size: 0.7rem;"></i></a></span>
           </div>
         </div>
         <div class="info-row">
@@ -690,7 +707,7 @@
             Indian Institute of Technology Guwahati (IIT Guwahati), Assam
           </div>
           <p class="grade">Department of Civil Engineering &nbsp;|&nbsp; Specialisation: Geotechnical Engineering</p>
-          <p class="grade">Supervisor: Dr. Vivek Padmanabha</p>
+          <p class="grade">Supervisor: <a href="https://viveins.github.io/" target="_blank" rel="noopener noreferrer" class="supervisor-link">Dr. Vivek Padmanabha <i class="fas fa-external-link-alt" style="font-size: 0.7rem;"></i></a></p>
           <p class="grade" style="margin-top:6px; color:#1a7a42;">
             <i class="fas fa-circle" style="font-size:.5rem; margin-right:4px;"></i> Ongoing
           </p>
@@ -731,7 +748,7 @@
 </section>
 
 <!-- ============================================================
-     PUBLICATIONS
+     PUBLICATIONS - CORRECTED LINKS
 ============================================================ -->
 <section id="publications" class="section section--alt">
   <div class="container">
@@ -740,44 +757,50 @@
 
     <div class="pub-list">
 
-      <!-- Publication 1 -->
+      <!-- Publication 1: Rock Slope Stability Analysis (2025) -->
       <div class="pub-card fade-in">
         <div class="pub-meta">
-          <span class="pub-tag chapter">Book Chapter</span>
-          <span class="pub-tag year">2024</span>
+          <span class="pub-tag chapter">Conference Paper</span>
+          <span class="pub-tag year">2025</span>
         </div>
         <h3>Rock Slope Stability Analysis Along NH 1 in Ladakh</h3>
         <p class="authors">
           <strong>Abass, Z.</strong>, Dey, A. K., &amp; Hussain, G.
         </p>
         <p class="venue">
-          In Indian Young Geotechnical Engineers Conference (pp. 131–142). Lecture Notes in Civil Engineering (LNCE).
-          Springer Nature Singapore, 2024.
+          In: Satyam, N., Singh, A.P., Dixit, M.S. (eds) <em>Proceedings of 9IYGEC 2023, Volume 2</em>. 
+          Lecture Notes in Civil Engineering, vol 606. Springer, Singapore (2025).
         </p>
         <div class="pub-links">
-          <a href="https://link.springer.com/chapter/10.1007/978-981-99-6998-2_13" target="_blank" rel="noopener noreferrer" class="pub-link">
-            <i class="fas fa-external-link-alt"></i> Publisher Link
+          <a href="https://link.springer.com/chapter/10.1007/978-981-97-6988-9_14" target="_blank" rel="noopener noreferrer" class="pub-link">
+            <i class="fas fa-external-link-alt"></i> Springer Link
+          </a>
+          <a href="https://doi.org/10.1007/978-981-97-6988-9_14" target="_blank" rel="noopener noreferrer" class="pub-link">
+            <i class="fas fa-doi"></i> DOI: 10.1007/978-981-97-6988-9_14
           </a>
         </div>
       </div>
 
-      <!-- Publication 2 -->
+      <!-- Publication 2: Seismic Vulnerability Assessment (2026) -->
       <div class="pub-card fade-in">
         <div class="pub-meta">
-          <span class="pub-tag chapter">Book Chapter</span>
-          <span class="pub-tag year">2025</span>
+          <span class="pub-tag chapter">Conference Paper</span>
+          <span class="pub-tag year">2026</span>
         </div>
         <h3>Seismic Vulnerability Assessment of Slopes Along NH-1 Highway in Ladakh: A Comprehensive Study Using Rock Mass Classification and Seismic Slope Stability Analysis</h3>
         <p class="authors">
-          <strong>Abass, Z.</strong>, Padmanabha, V., Dey, A. K., &amp; Hussain, G.
+          <strong>Abass, Z.</strong>, <a href="https://viveins.github.io/" target="_blank" rel="noopener noreferrer" class="supervisor-link">Padmanabha, V. <i class="fas fa-external-link-alt" style="font-size: 0.65rem;"></i></a>, Dey, A. K., &amp; Hussain, G.
         </p>
         <p class="venue">
-          In International Conference on Recent Advances in Geotechnical Earthquake Engineering and Soil Dynamics
-          (pp. 267–278). Lecture Notes in Civil Engineering (LNCE). Springer Nature Singapore, 2025.
+          In: Proceedings of the International Conference on Recent Advances in Geotechnical Earthquake Engineering and Soil Dynamics. 
+          Lecture Notes in Civil Engineering. Springer, Singapore (2026).
         </p>
         <div class="pub-links">
-          <a href="https://link.springer.com" target="_blank" rel="noopener noreferrer" class="pub-link">
-            <i class="fas fa-external-link-alt"></i> Publisher Link
+          <a href="https://link.springer.com/chapter/10.1007/978-981-96-1683-1_22" target="_blank" rel="noopener noreferrer" class="pub-link">
+            <i class="fas fa-external-link-alt"></i> Springer Link
+          </a>
+          <a href="https://doi.org/10.1007/978-981-96-1683-1_22" target="_blank" rel="noopener noreferrer" class="pub-link">
+            <i class="fas fa-doi"></i> DOI: 10.1007/978-981-96-1683-1_22
           </a>
         </div>
       </div>
@@ -808,6 +831,7 @@
             fragmentation patterns of rocks and geo-materials under high strain-rate loading.
             Investigating energy dissipation, crack propagation, and size distribution of
             fragments to develop predictive models for excavation and blasting applications.
+            Under the supervision of <a href="https://viveins.github.io/" target="_blank" rel="noopener noreferrer" class="supervisor-link">Dr. Vivek Padmanabha <i class="fas fa-external-link-alt" style="font-size: 0.7rem;"></i></a>.
           </p>
           <div class="proj-tags">
             <span class="proj-tag">Rock Mechanics</span>
@@ -828,7 +852,7 @@
           <p>
             Comprehensive stability analysis of rock slopes along National Highway 1 in Ladakh
             using kinematic analysis, rock mass classification (SMR, RMR, Q-system), and
-            limit-equilibrium methods. Results published as a book chapter in LNCE (2024).
+            limit-equilibrium methods. Results published as a book chapter in LNCE (2025).
           </p>
           <div class="proj-tags">
             <span class="proj-tag">Slope Stability</span>
@@ -849,7 +873,8 @@
           <p>
             Seismic slope stability assessment along NH-1, Ladakh, combining rock mass
             classification systems with pseudo-static and dynamic seismic analysis. Identified
-            critical failure zones and proposed mitigation strategies. Published in LNCE (2025).
+            critical failure zones and proposed mitigation strategies. Published in LNCE (2026)
+            in collaboration with <a href="https://viveins.github.io/" target="_blank" rel="noopener noreferrer" class="supervisor-link">Dr. Vivek Padmanabha <i class="fas fa-external-link-alt" style="font-size: 0.7rem;"></i></a>.
           </p>
           <div class="proj-tags">
             <span class="proj-tag">Seismic Analysis</span>
@@ -1004,7 +1029,7 @@
 ============================================================ -->
 <footer>
   <p>
-    &copy; 2024 <strong>Zaheer Abass</strong> &nbsp;|&nbsp;
+    &copy; 2025 <strong>Zaheer Abass</strong> &nbsp;|&nbsp;
     PhD Scholar, Dept. of Civil Engineering, IIT Guwahati &nbsp;|&nbsp;
     Designed for academic research
   </p>
